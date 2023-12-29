@@ -1157,7 +1157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curHealth: 0
-  maxHealth: 180
+  maxHealth: 10
   def: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   flash: {fileID: 2100000, guid: bf8114fc684ab864399dde7db7ddb04c, type: 2}
   healthBar: {fileID: 1670848781}
@@ -1823,7 +1823,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 0
   pickNextWaypointDist: 1.14
-  endReachedDistance: 5.79
+  endReachedDistance: 7.01
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -2027,7 +2027,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f132dc7b15025e4fa0d73efdaa29f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1507275510}
+  stoppingDuration: 0.2
+  shootingCooldown: 1.5
+  projectile: {fileID: 3300290544955209007, guid: c492d024c20666b4ca6b8133e9a3932d, type: 3}
 --- !u!1 &1438322063
 GameObject:
   m_ObjectHideFlags: 0

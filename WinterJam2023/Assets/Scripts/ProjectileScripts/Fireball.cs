@@ -36,7 +36,6 @@ public class Fireball : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Health>().TakeDamage(damage);
-            Debug.Log(direction);
             collision.gameObject.GetComponent<NPC>().PushEnemy(knockback, direction);
             Destroy(gameObject);
         }
