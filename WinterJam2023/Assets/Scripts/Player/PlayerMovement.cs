@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private PlayerControls playerControls;
     private float modifier;
+    private bool facingRight;
 
     private void Awake()
     {
@@ -38,6 +39,24 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             modifier = 1;
+        }
+
+        if (dir.x < 0)
+        {
+            facingRight = true;
+        }
+        if (dir.x > 0)
+        {
+            facingRight = false;
+        }
+
+        if (facingRight)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
