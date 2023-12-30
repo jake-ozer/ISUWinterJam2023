@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class RangedEnemy : MonoBehaviour
     public float stoppingDuration = 1.5f; // Duration to consider the enemy stopped
     public float shootingCooldown = 1.5f; // Cooldown between shots
     public GameObject projectile;
+    public AIDestinationSetter aiDes;
 
     private Vector3 previousPosition;
     private float timer = 0f;
@@ -22,6 +24,8 @@ public class RangedEnemy : MonoBehaviour
 
     void Update()
     {
+        target = aiDes.target;
+
         if (target != null)
         {
             if (transform.position != previousPosition)

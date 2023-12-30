@@ -30,7 +30,7 @@ public class RangedProjectile : MonoBehaviour
             NPC npc = collision.GetComponent<NPC>();
             if (npc != null)
             {
-                npc.PushEnemy(pushForce, new Vector3(1, 0, 0));
+                //npc.PushEnemy(pushForce, new Vector3(1, 0, 0));
             }
             Destroy(gameObject);
         }
