@@ -16,17 +16,21 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2835243048754183639, guid: a3736a52fbdc85340ba3f44616b0e165, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2c4db9f33d32f7e49b0e7b2c0e66d1cb, type: 2}
     - target: {fileID: 4168205423721709513, guid: a3736a52fbdc85340ba3f44616b0e165, type: 3}
       propertyPath: endReachedDistance
       value: 7.01
       objectReference: {fileID: 0}
     - target: {fileID: 5892929925112541619, guid: a3736a52fbdc85340ba3f44616b0e165, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.32
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5892929925112541619, guid: a3736a52fbdc85340ba3f44616b0e165, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7425998885948253806, guid: a3736a52fbdc85340ba3f44616b0e165, type: 3}
       propertyPath: m_LocalPosition.x
@@ -69,9 +73,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8977618577064558859, guid: a3736a52fbdc85340ba3f44616b0e165, type: 3}
+      propertyPath: m_Size.y
+      value: 1.46875
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977618577064558859, guid: a3736a52fbdc85340ba3f44616b0e165, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2f9d89df4b3eb974ca09a7f2c9cc9524, type: 3}
+      objectReference: {fileID: 372689979, guid: 792eda2e31e2f1d4ea2f8a2305d9114b, type: 3}
+    - target: {fileID: 8977618577064558859, guid: a3736a52fbdc85340ba3f44616b0e165, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9162679937890864840, guid: a3736a52fbdc85340ba3f44616b0e165, type: 3}
       propertyPath: m_Name
       value: RangedEnemy
@@ -106,6 +118,7 @@ MonoBehaviour:
   shootingCooldown: 1.5
   projectile: {fileID: 3300290544955209007, guid: c492d024c20666b4ca6b8133e9a3932d, type: 3}
   aiDes: {fileID: 594928312825989217}
+  anim: {fileID: 6728011601757183059}
 --- !u!114 &594928312825989217 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8234797036185201125, guid: a3736a52fbdc85340ba3f44616b0e165, type: 3}
@@ -117,3 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &6728011601757183059 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2835243048754183639, guid: a3736a52fbdc85340ba3f44616b0e165, type: 3}
+  m_PrefabInstance: {fileID: 8792852075514093956}
+  m_PrefabAsset: {fileID: 0}

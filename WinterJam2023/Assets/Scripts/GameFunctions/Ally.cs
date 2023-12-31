@@ -8,6 +8,7 @@ public class Ally : MonoBehaviour
     public bool followingPlayer = true;
     [SerializeField] private AIDestinationSetter aiDes;
     [SerializeField] private AIPath aiPath;
+    [SerializeField] private GameObject followBox;
     private GameObject player;
 
     private void Awake()
@@ -23,10 +24,24 @@ public class Ally : MonoBehaviour
             aiDes.target = player.transform;
             aiPath.endReachedDistance = 2.52f;
             //make settings for following
+            if (GetComponent<RangedEnemy>() != null)
+            {
+                GetComponent<RangedEnemy>().enabled = false;
+            }
+            followBox.SetActive(true);
         }
         else
-        {
-            aiPath.endReachedDistance = 0;
+        {  
+            if (GetComponent<RangedEnemy>() != null)
+            {
+                GetComponent<RangedEnemy>().enabled = true;
+                aiPath.endReachedDistance = 7.01f;
+            }
+            else
+            {
+                aiPath.endReachedDistance = 0;
+            }
+            followBox.SetActive(false);
         }
     }
 

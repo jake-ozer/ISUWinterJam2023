@@ -10,6 +10,7 @@ public class RangedEnemy : MonoBehaviour
     public float shootingCooldown = 1.5f; // Cooldown between shots
     public GameObject projectile;
     public AIDestinationSetter aiDes;
+    public Animator anim;
 
     private Vector3 previousPosition;
     private float timer = 0f;
@@ -60,13 +61,17 @@ public class RangedEnemy : MonoBehaviour
 
             // Update the previous position
             previousPosition = transform.position;
+
         }
     }
 
     void Shoot()
     {
+        anim.SetTrigger("shoot");
         var proj = Instantiate(projectile, this.transform.position, Quaternion.identity);
         var direction = (target.position - transform.position).normalized;
         proj.GetComponent<RangedProjectile>().SetDir(direction);
+        bool isAlly = GetComponent<NPCStateController>().curState == NPCStateController.NPCState.ally;
+        proj.GetComponent<RangedProjectile>().allyShot = isAlly;
     }
 }

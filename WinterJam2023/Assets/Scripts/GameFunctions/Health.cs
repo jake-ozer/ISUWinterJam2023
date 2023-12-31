@@ -11,10 +11,17 @@ public class Health : MonoBehaviour
 
     public HealthBar healthBar;
     public SpriteRenderer sr;
+    public NPCStateController stateCon;
 
     void Start()
     {
         curHealth = maxHealth;
+    }
+
+    public void RestoreHealthToFull()
+    {
+        curHealth = maxHealth;
+        healthBar.SetHealth(curHealth);
     }
 
     public void TakeDamage(float damage)
@@ -22,10 +29,21 @@ public class Health : MonoBehaviour
         curHealth -= damage;
         StartCoroutine("Flash");
         healthBar.SetHealth(curHealth);
+        if (GetComponent<NPC>() != null)
+        {
+            GetComponent<NPC>().FlashHealthBar();
+        }
 
         if (curHealth <= 0)
         {
-            Destroy(gameObject); //temporary
+            if (this.gameObject.name == "Player")
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                stateCon.curState = NPCStateController.NPCState.dead;
+            }
         }
     }
 

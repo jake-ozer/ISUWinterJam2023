@@ -5,27 +5,8 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public float speed = 10f;
     public float damage;
     public float knockback;
-    public float destroyAfterTime;
-    private Vector3 direction;
-
-    private void Start()
-    {
-        Invoke("DestroyAfterTime", destroyAfterTime);
-    }
-
-    public void SetDirection(Vector3 newDirection)
-    {
-        direction = newDirection.normalized;
-        direction.z = 0;
-    }
-
-    void Update()
-    {
-        transform.Translate(direction * speed * Time.deltaTime);
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -35,14 +16,26 @@ public class Fireball : MonoBehaviour
         }
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<Health>().TakeDamage(damage);
-            collision.gameObject.GetComponent<NPC>().PushEnemy(knockback, direction);
+            GameObject childObject = collision.gameObject;
+            GameObject parentObject = null;
+            if (childObject.transform.parent != null)
+            {
+                parentObject = collision.transform.parent.gameObject;
+            }
+
+            if (parentObject == null)
+            {
+                childObject.GetComponent<Health>().TakeDamage(damage);
+                childObject.GetComponent<NPC>().PushEnemy(knockback, GetComponent<ProjDirector>().direction);
+            }
+            else
+            {
+                parentObject.GetComponent<Health>().TakeDamage(damage);
+                parentObject.GetComponent<NPC>().PushEnemy(knockback, GetComponent<ProjDirector>().direction);
+            }
+
+           
             Destroy(gameObject);
         }
-    }
-
-    private void DestroyAfterTime()
-    {
-        Destroy(gameObject);
     }
 }

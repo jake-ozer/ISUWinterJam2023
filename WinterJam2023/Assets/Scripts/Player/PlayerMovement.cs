@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerControls playerControls;
     private float modifier;
     private bool facingRight;
+    public Animator anim;
 
     private void Awake()
     {
@@ -31,6 +32,15 @@ public class PlayerMovement : MonoBehaviour
     {
         var dir = playerControls.general.move.ReadValue<Vector2>();
         rb.velocity = dir * speed * modifier;
+
+        if (dir != Vector2.zero)
+        {
+            anim.SetBool("walking", true);
+        }
+        else
+        {
+            anim.SetBool("walking", false);
+        }
 
         if (playerControls.general.sprint.IsPressed())
         {
