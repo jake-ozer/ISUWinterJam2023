@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Wall
   - Enemy
+  - Ally
+  - Aggro
+  - Dead
   layers:
   - Default
   - TransparentFX

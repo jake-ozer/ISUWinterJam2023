@@ -10,6 +10,7 @@ public class RangedProjectile : MonoBehaviour
     public float speed;
     public float damage;
     public float pushForce = 5f;
+    public bool allyShot;
 
 
     private void Start()
@@ -24,16 +25,49 @@ public class RangedProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Ally")
+        if (!allyShot)
         {
-            collision.gameObject.GetComponent<Health>().TakeDamage(damage);
-            NPC npc = collision.GetComponent<NPC>();
-            if (npc != null)
+            if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Ally")
             {
-                npc.PushEnemy(pushForce, new Vector3(1, 0, 0));
+                if (collision.gameObject.GetComponent<Health>() != null)
+                {
+                    collision.gameObject.GetComponent<Health>().TakeDamage(damage);
+                    NPC npc = collision.GetComponent<NPC>();
+                    if (npc != null)
+                    {
+                        //npc.PushEnemy(pushForce, new Vector3(1, 0, 0));
+                    }
+                    Destroy(gameObject);
+                }
             }
-            Destroy(gameObject);
+            if (collision.gameObject.tag == "Wall")
+            {
+                Destroy(gameObject);
+            }
+            
         }
+        else
+        {
+            if (collision.gameObject.tag == "Enemy")
+            {
+                if (collision.gameObject.GetComponent<Health>() != null)
+                {
+                    collision.gameObject.GetComponent<Health>().TakeDamage(damage);
+                    NPC npc = collision.GetComponent<NPC>();
+                    if (npc != null)
+                    {
+                        //npc.PushEnemy(pushForce, new Vector3(1, 0, 0));
+                    }
+                    Destroy(gameObject);
+                }
+            }
+            if (collision.gameObject.tag == "Wall")
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        
     }
 
     private void DestroyAfterTime()
