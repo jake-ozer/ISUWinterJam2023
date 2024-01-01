@@ -4,31 +4,13 @@ using UnityEngine;
 
 public class RessurectionOrbs : MonoBehaviour
 {
-    RessurectionCounter ressurectionCounter;
-
-    private void Awake()
-    {
-        ressurectionCounter = GameObject.Find("Game Manager").GetComponent<RessurectionCounter>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int numOrbs;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            ressurectionCounter.uses += 1f;
-
+            FindObjectOfType<SpellManager>().numR += numOrbs;
             Destroy(this.gameObject);
         }
     }

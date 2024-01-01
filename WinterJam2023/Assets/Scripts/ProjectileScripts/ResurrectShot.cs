@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ResurrectShot : MonoBehaviour
 {
+    private void Start()
+    {
+        FindObjectOfType<SpellManager>().numR--;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Wall")

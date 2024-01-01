@@ -39,6 +39,7 @@ public class NPCStateController : MonoBehaviour
     }
 
     bool once = true;
+    bool onceForRestore = true;
     private void Update()
     {
         switch (curState)
@@ -79,6 +80,7 @@ public class NPCStateController : MonoBehaviour
                 }
                 battleHandler.GetComponent<Collider2D>().enabled = false;
                 allyIcon.SetActive(false);
+                onceForRestore = true;
                 break;
             case NPCState.ally:
                 damageBox.SetActive(false);
@@ -97,7 +99,11 @@ public class NPCStateController : MonoBehaviour
                 StopAllCoroutines();
                 once = true;
                 battleHandler.GetComponent<Collider2D>().enabled = true;
-                GetComponent<Health>().RestoreHealthToFull();
+                if (onceForRestore)
+                {
+                    GetComponent<Health>().RestoreHealthToFull();
+                    onceForRestore = false;
+                }
                 allyIcon.SetActive(true);
                 break;
         }

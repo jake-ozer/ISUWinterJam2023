@@ -136,10 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a35421f7e9d83444988b0067e7f0e7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
   damage: 10
   knockback: 1000
-  destroyAfterTime: 10
 --- !u!50 &8810620931095926585
 Rigidbody2D:
   serializedVersion: 4
@@ -180,9 +178,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  damage: 10
-  knockback: 1000
-  destroyAfterTime: 10
+  destroyAfterTime: 2
+  direction: {x: 0, y: 0, z: 0}
 --- !u!1 &3636208721962386418
 GameObject:
   m_ObjectHideFlags: 0
