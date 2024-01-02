@@ -271,3 +271,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numOrbs: 5
+  orbClip: {fileID: 8300000, guid: 9698672487c788541acb445d45967e33, type: 3}

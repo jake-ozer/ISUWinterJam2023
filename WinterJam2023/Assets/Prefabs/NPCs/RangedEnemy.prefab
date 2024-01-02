@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 411354630467393859, guid: a3736a52fbdc85340ba3f44616b0e165, type: 3}
+      propertyPath: resSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8530e7192b2b8a343b1935dcf65e532f, type: 3}
     - target: {fileID: 2515876499164871131, guid: a3736a52fbdc85340ba3f44616b0e165, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -119,6 +123,7 @@ MonoBehaviour:
   projectile: {fileID: 3300290544955209007, guid: c492d024c20666b4ca6b8133e9a3932d, type: 3}
   aiDes: {fileID: 594928312825989217}
   anim: {fileID: 6728011601757183059}
+  shotClip: {fileID: 8300000, guid: 7845f3a7609689545bd36ce8db665a0e, type: 3}
 --- !u!114 &594928312825989217 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8234797036185201125, guid: a3736a52fbdc85340ba3f44616b0e165, type: 3}

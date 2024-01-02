@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     public HealthBar healthBar;
     public SpriteRenderer sr;
     public NPCStateController stateCon;
+    public AudioClip hitClip;
 
     void Start()
     {
@@ -33,28 +34,41 @@ public class Health : MonoBehaviour
         healthBar.SetHealth(curHealth);
     }
 
+    bool canTakeDamage = true;
     public void TakeDamage(float damage)
     {
-        curHealth -= damage;
-        StartCoroutine("Flash");
-        healthBar.SetHealth(curHealth);
-        if (GetComponent<NPC>() != null)
+        if (canTakeDamage)
         {
-            GetComponent<NPC>().FlashHealthBar();
-        }
+            FindObjectOfType<SoundManager>().PlaySound(hitClip);
+            curHealth -= damage;
+            StartCoroutine("Flash");
+            healthBar.SetHealth(curHealth);
+            if (GetComponent<NPC>() != null)
+            {
+                GetComponent<NPC>().FlashHealthBar();
+            }
 
-        if (curHealth <= 0)
-        {
-            if (this.gameObject.name == "Player")
+            if (curHealth <= 0)
             {
-                Destroy(this.gameObject);
+                if (this.gameObject.name == "Player")
+                {
+                    Destroy(this.gameObject);
+                }
+                else
+                {
+                    stateCon.curState = NPCStateController.NPCState.dead;
+                }
             }
-            else
-            {
-                stateCon.curState = NPCStateController.NPCState.dead;
-            }
+            canTakeDamage = false;
+            Invoke("InvincibleTime", 0.05f);
         }
     }
+
+    private void InvincibleTime()
+    {
+        canTakeDamage = true;
+    }
+        
 
     public void AddHealth(float health)
     {

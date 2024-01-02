@@ -271,3 +271,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 40
+  potClip: {fileID: 8300000, guid: f566b843bac415f46a51fc09947406e3, type: 3}

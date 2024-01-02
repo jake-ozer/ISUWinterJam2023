@@ -12,6 +12,7 @@ public class Ally : MonoBehaviour
     [SerializeField] private GameObject npcAggro;
     private GameObject player;
     public float followSpeed = 5.3f;
+    public AudioClip resSound;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class Ally : MonoBehaviour
     {
         npcAggro.GetComponent<Collider2D>().enabled = false;
         npcAggro.GetComponent<Collider2D>().enabled = true;
+        FindObjectOfType<SoundManager>().PlaySound(resSound);
     }
 
     //*****NPCAggro handles targeting for attack state*******
@@ -31,7 +33,7 @@ public class Ally : MonoBehaviour
         if (followingPlayer)
         {
             aiDes.target = player.transform;
-            aiPath.endReachedDistance = 2.52f;
+            aiPath.endReachedDistance = 3.5f;
             //make settings for following
             if (GetComponent<RangedEnemy>() != null)
             {

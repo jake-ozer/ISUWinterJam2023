@@ -26,6 +26,7 @@ public class NPCStateController : MonoBehaviour
     public Color allyCol;
     public GameObject allyIcon;
     public AIPath aiPath;
+    public GameObject followBox;
 
     public Ally allyScript;
     public Animator anim;
@@ -81,6 +82,7 @@ public class NPCStateController : MonoBehaviour
                 battleHandler.GetComponent<Collider2D>().enabled = false;
                 allyIcon.SetActive(false);
                 onceForRestore = true;
+                followBox.SetActive(false);
                 break;
             case NPCState.ally:
                 damageBox.SetActive(false);
