@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Menu/MenuTemplate.unity
+    guid: e95c26bf2fcfb0f41be83ac5709024b4
   - enabled: 1
-    path: Assets/Scenes/Aiden dev/SceneTransition.unity
-    guid: 54757d4f3c80e9d4faed5aaae2fcba18
+    path: Assets/Scenes/Jake prototyoing/SimpleTutroialScene.unity
+    guid: 0e670b2beb6b43a498698ac1d4a814c8
+  - enabled: 1
+    path: Assets/Scenes/Jake prototyoing/LevelGen.unity
+    guid: e6427e1f8fd77fe46a847d1d125f1a10
   m_configObjects: {}

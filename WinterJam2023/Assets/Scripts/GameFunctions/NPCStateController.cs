@@ -1,9 +1,9 @@
 using Pathfinding;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
+//using System.Collections.Generic;
+//using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
+//using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class NPCStateController : MonoBehaviour
@@ -83,6 +83,10 @@ public class NPCStateController : MonoBehaviour
                 allyIcon.SetActive(false);
                 onceForRestore = true;
                 followBox.SetActive(false);
+                if (GetComponent<Ally>() != null)
+                {
+                    GetComponent<Ally>().followingPlayer = false;
+                }
                 break;
             case NPCState.ally:
                 damageBox.SetActive(false);
@@ -104,6 +108,10 @@ public class NPCStateController : MonoBehaviour
                 if (onceForRestore)
                 {
                     GetComponent<Health>().RestoreHealthToFull();
+                    if (GetComponent<Ally>() != null)
+                    {
+                        GetComponent<Ally>().followingPlayer = true;
+                    }
                     onceForRestore = false;
                 }
                 allyIcon.SetActive(true);

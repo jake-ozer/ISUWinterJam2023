@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PauseManager : MonoBehaviour
 {
     public GameObject pauseMenu;
     private PlayerControls playerControls;
     public AudioClip pauseClip;
+    public LevelManager levelManager;
+    public bool usable = true;
 
     private void Awake()
     {
         playerControls = new PlayerControls();
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     private void OnEnable()
@@ -25,11 +29,17 @@ public class PauseManager : MonoBehaviour
 
     private void Update()
     {
-        if (playerControls.general.pause.triggered)
+        if (playerControls.general.pause.triggered && usable)
         {
             FindObjectOfType<SoundManager>().PlaySound(pauseClip);
             PauseGame();
         }
+    }
+
+    public void LoadGenLevel()
+    {
+        Time.timeScale = 1;
+        levelManager.LoadGenLevel();
     }
 
     public void ResumeGame()
@@ -46,9 +56,25 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    public void NextScene()
+    {
+        Time.timeScale = 1;
+        levelManager.NextScene();
+    }
+
+    public void QuitToMenu()
+    {
+        levelManager.QuitToMainMenu();
+    }
+
     public void QuitGame()
     {
-        Debug.Log("You quit the game");
-        Application.Quit();
+        levelManager.QuitGame();
+    }
+
+    public void ResetLevel()
+    {
+        Time.timeScale = 1;
+        levelManager.ResetScene();
     }
 }

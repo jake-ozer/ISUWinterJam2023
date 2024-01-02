@@ -53,6 +53,7 @@ public class Health : MonoBehaviour
                 if (this.gameObject.name == "Player")
                 {
                     Destroy(this.gameObject);
+                    FindObjectOfType<LevelManager>().ResetScene();
                 }
                 else
                 {
