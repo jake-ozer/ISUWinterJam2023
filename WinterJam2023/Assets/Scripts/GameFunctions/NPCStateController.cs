@@ -83,6 +83,10 @@ public class NPCStateController : MonoBehaviour
                 allyIcon.SetActive(false);
                 onceForRestore = true;
                 followBox.SetActive(false);
+                if (GetComponent<Ally>() != null)
+                {
+                    GetComponent<Ally>().followingPlayer = false;
+                }
                 break;
             case NPCState.ally:
                 damageBox.SetActive(false);
@@ -104,6 +108,10 @@ public class NPCStateController : MonoBehaviour
                 if (onceForRestore)
                 {
                     GetComponent<Health>().RestoreHealthToFull();
+                    if (GetComponent<Ally>() != null)
+                    {
+                        GetComponent<Ally>().followingPlayer = true;
+                    }
                     onceForRestore = false;
                 }
                 allyIcon.SetActive(true);

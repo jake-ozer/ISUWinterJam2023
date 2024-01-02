@@ -8,6 +8,7 @@ public class PlayerShoot : MonoBehaviour
     public GameObject curShot;
     public GameObject[] shotOptions;
     public int shotIndex = 0;
+    public GameObject[] arrows;
 
     private Camera mainCamera;
 
@@ -42,6 +43,25 @@ public class PlayerShoot : MonoBehaviour
     private void Update()
     {
         curShot = shotOptions[shotIndex];
+        //arrow select UI
+        switch(shotIndex)
+        {
+            case 0:
+                arrows[0].SetActive(true);
+                arrows[1].SetActive(false);
+                arrows[2].SetActive(false);
+                break;
+            case 1:
+                arrows[0].SetActive(false);
+                arrows[1].SetActive(true);
+                arrows[2].SetActive(false);
+                break;
+            case 2:
+                arrows[0].SetActive(false);
+                arrows[1].SetActive(false);
+                arrows[2].SetActive(true);
+                break;
+        }
 
         if (playerControls.general.fire.triggered && canShoot)
         {
