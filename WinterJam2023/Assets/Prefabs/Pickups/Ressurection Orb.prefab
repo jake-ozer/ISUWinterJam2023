@@ -249,7 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85fa19a717f2f546be954bb1d0b615b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numOrbs: 3
+  numOrbs: 1
+  orbClip: {fileID: 8300000, guid: 9698672487c788541acb445d45967e33, type: 3}
 --- !u!95 &5366943478046913039
 Animator:
   serializedVersion: 5

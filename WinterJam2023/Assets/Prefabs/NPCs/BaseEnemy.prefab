@@ -660,9 +660,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17123795, y: 0}
+  m_Offset: {x: 0.32766342, y: 0}
   serializedVersion: 2
-  m_Radius: 7.6482162
+  m_Radius: 9.458288
 --- !u!114 &6508249820051203670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1100,6 +1100,7 @@ MonoBehaviour:
   healthBar: {fileID: 1661184485029098309}
   sr: {fileID: 8977618577064558859}
   stateCon: {fileID: 2105611982257877557}
+  hitClip: {fileID: 8300000, guid: 75a2a2bc01019904594c8962f76809e0, type: 3}
 --- !u!61 &4743122628476324807
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1292,6 +1293,7 @@ MonoBehaviour:
   followBox: {fileID: 4364384534405749069}
   npcAggro: {fileID: 5598582839413774516}
   followSpeed: 5.3
+  resSound: {fileID: 8300000, guid: 9698672487c788541acb445d45967e33, type: 3}
 --- !u!114 &2105611982257877557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1313,6 +1315,7 @@ MonoBehaviour:
   allyCol: {r: 0, g: 0.8962264, b: 0.87162405, a: 1}
   allyIcon: {fileID: 1012576253309967662}
   aiPath: {fileID: 4168205423721709513}
+  followBox: {fileID: 4364384534405749069}
   allyScript: {fileID: 411354630467393859}
   anim: {fileID: 2835243048754183639}
   timeTillDespawn: 20

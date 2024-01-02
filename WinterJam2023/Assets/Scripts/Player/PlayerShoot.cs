@@ -16,6 +16,8 @@ public class PlayerShoot : MonoBehaviour
     public Animator anim;
     public bool canShoot = true;
 
+    public AudioClip shotSound;
+
     private void Awake()
     {
         playerControls = new PlayerControls();
@@ -65,6 +67,7 @@ public class PlayerShoot : MonoBehaviour
 
     public void SpawnFireball()
     {
+        FindObjectOfType<SoundManager>().PlaySound(shotSound);
 
         Vector3 mousePosition = Input.mousePosition;
         // Convert mouse position from screen space to world space

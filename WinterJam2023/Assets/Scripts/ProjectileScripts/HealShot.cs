@@ -5,6 +5,7 @@ using UnityEngine;
 public class HealShot : MonoBehaviour
 {
     public float healAmount = 20f;
+    public AudioClip healSound;
 
     private void Start()
     {
@@ -34,7 +35,7 @@ public class HealShot : MonoBehaviour
                 parentObject.GetComponent<Health>().AddHealth(healAmount);
             }
 
-
+            FindObjectOfType<SoundManager>().PlaySound(healSound);
             Destroy(gameObject);
         }
     }

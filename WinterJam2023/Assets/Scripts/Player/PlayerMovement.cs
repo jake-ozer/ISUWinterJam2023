@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private float modifier;
     private bool facingRight;
     public Animator anim;
+    public GameObject playerGfx;
 
     private void Awake()
     {
@@ -62,11 +63,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (facingRight)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            playerGfx.transform.localScale = new Vector3(1, 1, 1);
         }
         else
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            playerGfx.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 

@@ -11,6 +11,7 @@ public class RangedEnemy : MonoBehaviour
     public GameObject projectile;
     public AIDestinationSetter aiDes;
     public Animator anim;
+    public AudioClip shotClip;
 
     private Vector3 previousPosition;
     private float timer = 0f;
@@ -67,6 +68,7 @@ public class RangedEnemy : MonoBehaviour
 
     void Shoot()
     {
+        FindObjectOfType<SoundManager>().PlaySound(shotClip);
         anim.SetTrigger("shoot");
         var proj = Instantiate(projectile, this.transform.position, Quaternion.identity);
         var direction = (target.position - transform.position).normalized;
