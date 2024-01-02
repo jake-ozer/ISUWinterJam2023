@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -12,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight;
     public Animator anim;
     public GameObject playerGfx;
+    public TextMeshProUGUI shiftText;
 
     private void Awake()
     {
@@ -46,10 +48,12 @@ public class PlayerMovement : MonoBehaviour
         if (playerControls.general.sprint.IsPressed())
         {
             modifier = sprintModifier;
+            shiftText.alpha = 0.3f;
         }
         else
         {
             modifier = 1;
+            shiftText.alpha = 1f;
         }
 
         if (dir.x < 0)

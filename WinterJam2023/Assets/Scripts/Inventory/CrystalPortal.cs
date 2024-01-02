@@ -51,6 +51,7 @@ public class CrystalPortal : MonoBehaviour
             {
                 Destroy(npc.gameObject);
             }
+            FindObjectOfType<LevelManager>().NextScene();
         }
     }
 }

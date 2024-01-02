@@ -19,6 +19,9 @@ public class PlayerShoot : MonoBehaviour
 
     public AudioClip shotSound;
 
+    private float shotCoolDownTimer;
+    private float shotCooldown = 0.2f;
+
     private void Awake()
     {
         playerControls = new PlayerControls();
@@ -43,6 +46,7 @@ public class PlayerShoot : MonoBehaviour
     private void Update()
     {
         curShot = shotOptions[shotIndex];
+        shotCoolDownTimer += Time.deltaTime;
         //arrow select UI
         switch(shotIndex)
         {
@@ -63,10 +67,11 @@ public class PlayerShoot : MonoBehaviour
                 break;
         }
 
-        if (playerControls.general.fire.triggered && canShoot)
+        if (playerControls.general.fire.triggered && canShoot && shotCoolDownTimer >= shotCooldown)
         {
             SpawnFireball();
             anim.SetTrigger("shoot");
+            shotCoolDownTimer = 0;
         }
 
         //show health bar for allies when heal spell is selected
