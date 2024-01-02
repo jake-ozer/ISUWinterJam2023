@@ -12,6 +12,7 @@ public class CrystalPortal : MonoBehaviour
     public int crystalsNeeded;
     public GameObject arrow;
     public TextMeshProUGUI crystalText;
+    public Animator sceneChangeAnim;
 
     private void Awake()
     {
@@ -51,7 +52,7 @@ public class CrystalPortal : MonoBehaviour
             {
                 Destroy(npc.gameObject);
             }
-            FindObjectOfType<LevelManager>().NextScene();
+            FindObjectOfType<PauseManager>().ChooseNextScene();
         }
     }
 }
