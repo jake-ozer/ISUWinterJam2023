@@ -9,6 +9,9 @@ TagManager:
   - Ally
   - Aggro
   - Dead
+  - InnerRadius
+  - MiddleRadius
+  - OuterRadius
   layers:
   - Default
   - TransparentFX
