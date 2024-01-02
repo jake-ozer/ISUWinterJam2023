@@ -50,6 +50,7 @@ public class LevelManager : MonoBehaviour
 
     public void QuitToMainMenu()
     {
+        sceneIndex = 0;
         SceneManager.LoadScene(0);
     }
 

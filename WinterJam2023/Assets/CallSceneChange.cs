@@ -18,7 +18,7 @@ public class CallSceneChange : MonoBehaviour
         animDone = fadeAnimation.GetBool("Transition");
         if (animDone == true)
         {
-            loadScript.SceneChange();
+            FindObjectOfType<PauseManager>().NextScene();
         }
     }
 }
