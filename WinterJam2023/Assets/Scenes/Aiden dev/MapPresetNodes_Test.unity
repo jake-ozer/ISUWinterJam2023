@@ -5258,7 +5258,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 76a69268050011a429cbb4c8c37f59d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6064,7 +6064,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -4
   m_Sprite: {fileID: 21300000, guid: 57c3326ac243ce243a80efa3308ec81b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6922,6 +6922,7 @@ MonoBehaviour:
   speed: 5
   sprintModifier: 2
   anim: {fileID: 893985769}
+  playerGfx: {fileID: 0}
 --- !u!114 &1507275515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6941,6 +6942,7 @@ MonoBehaviour:
   healthBar: {fileID: 1781776872}
   sr: {fileID: 893985768}
   stateCon: {fileID: 0}
+  hitClip: {fileID: 0}
 --- !u!114 &1507275516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6957,7 +6959,10 @@ MonoBehaviour:
   shotOptions:
   - {fileID: 3300290544955209007, guid: 01dbc7ed4e6c2e94c829c9f835bb6a6c, type: 3}
   - {fileID: 3300290544955209007, guid: 0972bb5300be0994e9ee1e837c338b29, type: 3}
+  shotIndex: 0
   anim: {fileID: 893985769}
+  canShoot: 1
+  shotSound: {fileID: 0}
 --- !u!1001 &1524661730
 PrefabInstance:
   m_ObjectHideFlags: 0
