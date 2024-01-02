@@ -1281,7 +1281,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9162679937890864840}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d99b78954b11c3409b9bb1e007edeb6, type: 3}
   m_Name: 
@@ -1290,6 +1290,8 @@ MonoBehaviour:
   aiDes: {fileID: 8234797036185201125}
   aiPath: {fileID: 4168205423721709513}
   followBox: {fileID: 4364384534405749069}
+  npcAggro: {fileID: 5598582839413774516}
+  followSpeed: 5.3
 --- !u!114 &2105611982257877557
 MonoBehaviour:
   m_ObjectHideFlags: 0

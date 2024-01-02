@@ -7,13 +7,14 @@ public class PlayerShoot : MonoBehaviour
 {
     public GameObject curShot;
     public GameObject[] shotOptions;
-    private int shotIndex = 0;
+    public int shotIndex = 0;
 
     private Camera mainCamera;
 
     private PlayerControls playerControls;
 
     public Animator anim;
+    public bool canShoot = true;
 
     private void Awake()
     {
@@ -35,22 +36,30 @@ public class PlayerShoot : MonoBehaviour
         mainCamera = Camera.main;
     }
 
+    bool once = true;
     private void Update()
     {
-        if (playerControls.general.fire.triggered)
+        curShot = shotOptions[shotIndex];
+
+        if (playerControls.general.fire.triggered && canShoot)
         {
             SpawnFireball();
             anim.SetTrigger("shoot");
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        //show health bar for allies when heal spell is selected
+        if (shotIndex == 2 && once)
         {
-            shotIndex++;
-            if (shotIndex >= shotOptions.Length)
+            Ally[] allies = FindObjectsOfType<Ally>();
+            foreach (Ally ally in allies)
             {
-                shotIndex = 0;
+                ally.gameObject.GetComponent<NPC>().FlashHealthBar();
             }
-            curShot = shotOptions[shotIndex];
+            once = false;
+        }
+        else
+        {
+            once = true;
         }
     }
 

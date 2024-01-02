@@ -18,6 +18,15 @@ public class Health : MonoBehaviour
         curHealth = maxHealth;
     }
 
+    public bool HealCheck()
+    {
+        if (curHealth == maxHealth)
+        {
+            return false;
+        }
+        return true;
+    }
+
     public void RestoreHealthToFull()
     {
         curHealth = maxHealth;
@@ -47,11 +56,11 @@ public class Health : MonoBehaviour
         }
     }
 
-    public bool AddHealth(float health)
+    public void AddHealth(float health)
     {
         if (curHealth == maxHealth)
         {
-            return false;
+            //do nothing
         }
         else
         {
@@ -61,7 +70,11 @@ public class Health : MonoBehaviour
                 curHealth = maxHealth;
             }
             healthBar.SetHealth(curHealth);
-            return true;
+        }
+
+        if (GetComponent<NPC>() != null)
+        {
+            GetComponent<NPC>().FlashHealthBar();
         }
     }
 

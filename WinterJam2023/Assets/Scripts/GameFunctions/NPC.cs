@@ -19,6 +19,7 @@ public class NPC : MonoBehaviour
 
     private void Awake()
     {
+        transform.SetParent(null);
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
     }
@@ -55,13 +56,13 @@ public class NPC : MonoBehaviour
 
     private void Update()
     {
-        if (player != null)
+        if (aiDes.target != null)
         {
-            if (player.transform.position.x > transform.position.x)
+            if (aiDes.target.transform.position.x > transform.position.x)
             {
                 gfx.transform.localScale = new Vector3(-1, 1, 1);
             }
-            else if (player.transform.position.x <= transform.position.x )
+            else if (aiDes.target.transform.position.x <= transform.position.x )
             {
                 gfx.transform.localScale = new Vector3(1, 1, 1);
             }

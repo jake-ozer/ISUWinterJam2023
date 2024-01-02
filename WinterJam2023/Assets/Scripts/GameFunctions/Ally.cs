@@ -9,11 +9,20 @@ public class Ally : MonoBehaviour
     [SerializeField] private AIDestinationSetter aiDes;
     [SerializeField] private AIPath aiPath;
     [SerializeField] private GameObject followBox;
+    [SerializeField] private GameObject npcAggro;
     private GameObject player;
+    public float followSpeed = 5.3f;
 
     private void Awake()
     {
         player = GameObject.Find("Player");
+    }
+
+    //reset targeting collider
+    private void OnEnable()
+    {
+        npcAggro.GetComponent<Collider2D>().enabled = false;
+        npcAggro.GetComponent<Collider2D>().enabled = true;
     }
 
     //*****NPCAggro handles targeting for attack state*******
@@ -29,6 +38,7 @@ public class Ally : MonoBehaviour
                 GetComponent<RangedEnemy>().enabled = false;
             }
             followBox.SetActive(true);
+            aiPath.maxSpeed = followSpeed;
         }
         else
         {  
@@ -42,6 +52,7 @@ public class Ally : MonoBehaviour
                 aiPath.endReachedDistance = 0;
             }
             followBox.SetActive(false);
+            aiPath.maxSpeed = 2.57f;
         }
     }
 
