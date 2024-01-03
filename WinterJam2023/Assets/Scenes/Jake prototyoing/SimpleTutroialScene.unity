@@ -13144,8 +13144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Portal: {fileID: 762447277}
-  textBox1: {fileID: 0}
-  textBox2: {fileID: 0}
+  textBox1: {fileID: 1620914799}
+  textBox2: {fileID: 346728203}
 --- !u!61 &1170271496
 BoxCollider2D:
   m_ObjectHideFlags: 0
