@@ -2656,7 +2656,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stronger Together
+  m_text: Stronger Together!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9ff89bc4dc6e7ba44b696e4c09c784f0, type: 2}
   m_sharedMaterial: {fileID: -2108195883806347418, guid: 9ff89bc4dc6e7ba44b696e4c09c784f0, type: 2}
