@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jake prototyoing/LevelGen.unity
     guid: e6427e1f8fd77fe46a847d1d125f1a10
+  - enabled: 1
+    path: Assets/Scenes/Menu/ThanksForPlaying.unity
+    guid: 6ab36a8c6a0b2b747940506e1fb492ba
   m_configObjects: {}
