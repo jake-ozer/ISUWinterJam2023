@@ -41,7 +41,7 @@ public class LevelManager : MonoBehaviour
     public void NextScene()
     {
         sceneIndex++;
-        if (sceneIndex > 2)
+        if (sceneIndex > 3)
         {
             sceneIndex = 0;
         }
