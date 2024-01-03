@@ -10876,7 +10876,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use your crystal orb in the top left to find shards and win the round!
+  m_text: Use your crystal ball in the top left to find shards and win the round!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2606a70620bba1c41864854e9560c724, type: 2}
   m_sharedMaterial: {fileID: 278188865278772269, guid: 2606a70620bba1c41864854e9560c724, type: 2}

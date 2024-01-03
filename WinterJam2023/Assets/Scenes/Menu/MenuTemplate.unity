@@ -330,7 +330,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Necro Mage
+  m_text: 'Necro-Mage:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9ff89bc4dc6e7ba44b696e4c09c784f0, type: 2}
   m_sharedMaterial: {fileID: -2108195883806347418, guid: 9ff89bc4dc6e7ba44b696e4c09c784f0, type: 2}
@@ -2790,7 +2790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Necro Mage
+  m_text: 'Necro-Mage:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9ff89bc4dc6e7ba44b696e4c09c784f0, type: 2}
   m_sharedMaterial: {fileID: -2108195883806347418, guid: 9ff89bc4dc6e7ba44b696e4c09c784f0, type: 2}
@@ -3157,7 +3157,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f1ef4181ecc21d7408c32862c5c4371d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c2adc945d4846b44fbdf7dd8d4af91c0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.493
   m_Pitch: 0.93
