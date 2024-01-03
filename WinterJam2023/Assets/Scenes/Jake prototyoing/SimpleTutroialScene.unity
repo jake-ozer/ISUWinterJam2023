@@ -12189,6 +12189,7 @@ GameObject:
   - component: {fileID: 1507275513}
   - component: {fileID: 1507275515}
   - component: {fileID: 1507275516}
+  - component: {fileID: 1507275517}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -12390,6 +12391,20 @@ MonoBehaviour:
   anim: {fileID: 893985769}
   canShoot: 1
   shotSound: {fileID: 8300000, guid: 4bfbcd05a6db0fa4fa1f13dbb70f1f36, type: 3}
+--- !u!114 &1507275517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507275508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734bcf73af6bda3499797f851d6c6858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crystalNearby: 0
+  detectorAnimator: {fileID: 1842070376}
 --- !u!4 &1507728318 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5649796527507599188, guid: f019d229c3044ca438d22e156cd610af, type: 3}
@@ -13503,6 +13518,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08f5b432eff87a6498531a38efde0618, type: 3}
+--- !u!95 &1842070376 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7122976646010839750, guid: 97b99bf0c762d4242990f571cb8cbbb0, type: 3}
+  m_PrefabInstance: {fileID: 751044990}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1854355368
 GameObject:
   m_ObjectHideFlags: 0
