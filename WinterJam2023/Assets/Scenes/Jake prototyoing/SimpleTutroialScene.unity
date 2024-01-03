@@ -10830,8 +10830,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -860.78, y: -488.25}
-  m_SizeDelta: {x: 1059.018, y: 253.5467}
+  m_AnchoredPosition: {x: -861.2692, y: -488.50974}
+  m_SizeDelta: {x: 1156.857, y: 253.5467}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1017059615
 MonoBehaviour:
@@ -10853,7 +10853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Collect all crystals to open the portal, and win the round
+  m_text: Use your crystal orb in the top left to find shards and win the round!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2606a70620bba1c41864854e9560c724, type: 2}
   m_sharedMaterial: {fileID: 278188865278772269, guid: 2606a70620bba1c41864854e9560c724, type: 2}
